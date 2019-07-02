@@ -90,6 +90,7 @@ abstract class AbstractBinaryInput
         stream_filter_append($file, 'convert.base64-decode');
         fwrite($file, $response->getResultData('data'));
         fclose($file);
+        chmod($path, 0777);
     }
 
     /**
